@@ -209,7 +209,7 @@
 		BF87022422952D34008413B2 /* AngryNeutral.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AngryNeutral.html; sourceTree = "<group>"; };
 		BF87022522952D34008413B2 /* NeutralAngry.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NeutralAngry.html; sourceTree = "<group>"; };
 		BF87022A229656DF008413B2 /* String+IsInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsInt.swift"; sourceTree = "<group>"; };
-		BF884DF9205A2044002262DB /* GoNoGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoNoGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF884DF9205A2044002262DB /* StopSingnal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopSingnal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF884DFC205A2044002262DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF884DFE205A2044002262DB /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		BF884E01205A2044002262DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -465,7 +465,7 @@
 		BF884DF0205A2044002262DB = {
 			isa = PBXGroup;
 			children = (
-				BF884DFB205A2044002262DB /* GoNoGo */,
+				BF884DFB205A2044002262DB /* StopSignal */,
 				BF884DFA205A2044002262DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -473,12 +473,12 @@
 		BF884DFA205A2044002262DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF884DF9205A2044002262DB /* GoNoGo.app */,
+				BF884DF9205A2044002262DB /* StopSingnal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF884DFB205A2044002262DB /* GoNoGo */ = {
+		BF884DFB205A2044002262DB /* StopSignal */ = {
 			isa = PBXGroup;
 			children = (
 				BF1E38F620BF874E001D851F /* EasterEgg */,
@@ -498,7 +498,7 @@
 				BF884E05205A2044002262DB /* LaunchScreen.storyboard */,
 				BF884E08205A2044002262DB /* Info.plist */,
 			);
-			path = GoNoGo;
+			path = StopSignal;
 			sourceTree = "<group>";
 		};
 		BF884E0E205A2087002262DB /* Block */ = {
@@ -550,9 +550,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF884DF8205A2044002262DB /* GoNoGo */ = {
+		BF884DF8205A2044002262DB /* StopSingnal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF884E0B205A2044002262DB /* Build configuration list for PBXNativeTarget "GoNoGo" */;
+			buildConfigurationList = BF884E0B205A2044002262DB /* Build configuration list for PBXNativeTarget "StopSingnal" */;
 			buildPhases = (
 				BF884DF5205A2044002262DB /* Sources */,
 				BF884DF6205A2044002262DB /* Frameworks */,
@@ -562,9 +562,9 @@
 			);
 			dependencies = (
 			);
-			name = GoNoGo;
+			name = StopSingnal;
 			productName = CognativeFlexabilityTraining;
-			productReference = BF884DF9205A2044002262DB /* GoNoGo.app */;
+			productReference = BF884DF9205A2044002262DB /* StopSingnal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -583,7 +583,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BF884DF4205A2044002262DB /* Build configuration list for PBXProject "GoNoGo" */;
+			buildConfigurationList = BF884DF4205A2044002262DB /* Build configuration list for PBXProject "StopSingnal" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -596,7 +596,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF884DF8205A2044002262DB /* GoNoGo */,
+				BF884DF8205A2044002262DB /* StopSingnal */,
 			);
 		};
 /* End PBXProject section */
@@ -868,7 +868,7 @@
 				DEVELOPMENT_TEAM = HTSF3MHP5C;
 				INFOPLIST_FILE = "$(SRCROOT)/GoNoGo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daisychain.GoNoGoMikaela;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daisychain.StopSignalMikaela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -885,7 +885,7 @@
 				DEVELOPMENT_TEAM = HTSF3MHP5C;
 				INFOPLIST_FILE = "$(SRCROOT)/GoNoGo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.daisychain.GoNoGoMikaela;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daisychain.StopSignalMikaela;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -896,7 +896,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF884DF4205A2044002262DB /* Build configuration list for PBXProject "GoNoGo" */ = {
+		BF884DF4205A2044002262DB /* Build configuration list for PBXProject "StopSingnal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF884E09205A2044002262DB /* Debug */,
@@ -905,7 +905,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF884E0B205A2044002262DB /* Build configuration list for PBXNativeTarget "GoNoGo" */ = {
+		BF884E0B205A2044002262DB /* Build configuration list for PBXNativeTarget "StopSingnal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF884E0C205A2044002262DB /* Debug */,
