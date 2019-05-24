@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController, UITextViewDelegate {
     
-    var experimentStructure : [BlockType] = [.practice,.angryneutral, .happyneutral, .neutralangry, .neutralhappy]
+    var experimentStructure : [BlockType] = [.practice,.happyangry, .happyneutral, .neutralangry, .happyangry, .happyneutral, .neutralangry]
     let isEvenOddStructure : [Bool?] = [nil, true, false, nil]                  //  This is used to define the single blocks types and whether they are Task A (even,odd) or B (vowel,consonant)
     let numBlocks = 4
     
@@ -48,14 +48,12 @@ class ViewController: UIViewController, UITextViewDelegate {
             setText("Break")
             setTestTimer(isFinished: false)
             switch experimentStructure[blockProgress] {
-            case .angryneutral:
-                setText("AngryNeutral")
             case .happyneutral:
                 setText("HappyNeutral")
             case .neutralangry:
                 setText("NeutralAngry")
-            case .neutralhappy:
-                setText("NeutralHappy")
+            case .happyangry:
+                setText("NeutralAngry") // TODO:  Sort this shit out
             case .practice:
                 break
             }
@@ -102,7 +100,7 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     func setExperimentStructure(){
-        var structure : [BlockType] = [.angryneutral, .happyneutral, .neutralangry, .neutralhappy]
+        var structure : [BlockType] = [.happyneutral, .neutralangry]
         structure.shuffle()
         experimentStructure = [.practice, structure[0], structure[1], structure[2], structure[3]]
     }

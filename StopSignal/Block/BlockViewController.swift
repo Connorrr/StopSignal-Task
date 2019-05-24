@@ -21,7 +21,7 @@ class BlockViewController: UIViewController {
     @IBOutlet weak var leftButton: ResponseButton!
     @IBOutlet weak var fruitButton: ResponseButton!     //  This button is not used in the TS app
     @IBOutlet weak var redButton: ResponseButton!       //  This button is not used in the TS app
-    @IBOutlet weak var goButton: ResponseButton!
+    @IBOutlet weak var rightButton: ResponseButton!
     
     var blockType : BlockType?
     var isEvenOdd : Bool?
@@ -47,7 +47,6 @@ class BlockViewController: UIViewController {
         //  Set middle buttons to be invis in the containers
         redButton.alpha = 0.0
         fruitButton.alpha = 0.0
-        leftButton.alpha = 0.0
         
         print("The block type is:  ")
         dump(blockType)
@@ -99,14 +98,15 @@ class BlockViewController: UIViewController {
         forceProgress()
     }
     
-    @IBAction func goButtonPressed(_ sender: UIButton) {
+    @IBAction func rightButtonPressed(_ sender: UIButton) {
         trialData.response = "Go"
         wasResponse = true
         forceProgress()
     }
     
     func setButtonLabels() {
-        goButton.setImage(#imageLiteral(resourceName: "GoButton.png"), for: .normal)
+        leftButton.setImage(#imageLiteral(resourceName: "LeftButton.png"), for: .normal)
+        rightButton.setImage(#imageLiteral(resourceName: "RightButton.png"), for: .normal)
     }
     
     //  Called after the response button is pressed
@@ -116,12 +116,13 @@ class BlockViewController: UIViewController {
     
     var trialTimer : Timer?
     var responseTimer : Timer?
+    var borderTimer : Timer?
     var blankTimer : Timer?
     var repeatTimer : Timer?
     
     func executeBlock() {
-        print(block!.trialImageFilenames[trialIndex] + ".png")
-        self.stimImage.image = UIImage(named: block!.trialImageFilenames[trialIndex]) //  No images in this version
+        //print(block!.trialImageFilenames[trialIndex] + ".png")
+        self.stimImage.image = UIImage(named: "AF1")//block!.trialImageFilenames[trialIndex]) //  No images in this version
         
         if StaticVars.id == "JasmineTest" {
             self.stimImage.image = #imageLiteral(resourceName: "jasmine.jpg")
@@ -135,7 +136,7 @@ class BlockViewController: UIViewController {
         displayFixation()
     
         //  Show trial for 5000ms or first response
-        trialTimer = Timer.scheduledTimer(withTimeInterval: 1.4, repeats: false, block: { (trialTimer) in self.displayTrial() })
+        trialTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { (trialTimer) in self.displayTrial() })
     
         //  25ms blank (called in displayTrial)
         
@@ -150,7 +151,9 @@ class BlockViewController: UIViewController {
     }
     
     func displayTrial() {
-        //self.setBoarder(isSwitch: block!.trials![trialIndex].isSwitchTrial!)
+        if (!block!.isGoTrial[trialIndex]){
+            self.borderTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: { (responseTimer) in self.setBoarder(isSwitch: true) })
+        }
         self.fixationCross.isHidden = true
         self.stimImage.isHidden = false
         self.stimLabel.isHidden = true
@@ -226,7 +229,7 @@ class BlockViewController: UIViewController {
         self.leftButton.isHidden = isHidden
         self.fruitButton.isHidden = isHidden
         self.redButton.isHidden = isHidden
-        self.goButton.isHidden = isHidden
+        self.rightButton.isHidden = isHidden
     }
     
     func getResponseTime() {
@@ -272,12 +275,10 @@ class BlockViewController: UIViewController {
             trialData.blockType = "Practice"
         case .neutralangry:
             trialData.blockType = "NeutralAngry"
-        case .angryneutral:
-            trialData.blockType = "AngryNeutral"
         case .happyneutral:
             trialData.blockType = "HappyNeutral"
-        case .neutralhappy:
-            trialData.blockType = "NeutralHappy"
+        case .happyangry:
+            trialData.blockType = "HappyAngry"
         }
         
         //  TODO:  Set the image for this trial

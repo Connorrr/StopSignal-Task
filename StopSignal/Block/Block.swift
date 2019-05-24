@@ -28,14 +28,14 @@ class Block {
         if (blockType == .practice){
             numberOfTrials = 10
         }else{
-            numberOfTrials = 60
+            numberOfTrials = 48
         }
         
-        buildGoNoGo()
-        buildMainBlockImageFilenames()
+        buildStopGoList()
+        //buildMainBlockImageFilenames()
     }
     
-    private func buildGoNoGo(){
+    private func buildStopGoList(){
         var typeBlock : [Int] = []
         var loops : Int
         
@@ -59,53 +59,50 @@ class Block {
             }else{
                 isGoTrial.append(true)
                 isGoTrial.append(true)
-                isGoTrial.append(true)
-                isGoTrial.append(true)
                 isGoTrial.append(false)
             }
         }
         
         var goCount = 0
-        var noGoCount = 0
+        var stopCount = 0
         for i in isGoTrial {
             if (i){
                 goCount += 1
             }else{
-                noGoCount += 1
+                stopCount += 1
             }
         }
+        print("Num Go: \(goCount)")
+        print("Num Stop: \(stopCount)")
                 
     }
     
     func buildMainBlockImageFilenames(){
-        var goSuffix = ""
-        var noGoSuffix = ""
-        var numNoGoM = 9
-        var numNoGoF = 9
-        var numGoM = 21
-        var numGoF = 21
+        var suffix1 = ""
+        var suffix2 = ""
+        var numStopM = 6
+        var numStopF = 6
+        var numGoM = 18
+        var numGoF = 18
         
         
         switch blockType {
         case .practice:
-            goSuffix = "N"
-            noGoSuffix = "H"
-            numNoGoM = 1
-            numNoGoF = 2
-            numGoM = 4
-            numGoF = 3
+            suffix1 = "N"
+            suffix2 = "H"
+            numStopM = 1
+            numStopF = 2
+            numGoM = 3
+            numGoF = 2
         case .neutralangry:
-            goSuffix = "N"
-            noGoSuffix = "A"
-        case .angryneutral:
-            goSuffix = "A"
-            noGoSuffix = "N"
+            suffix1 = "N"
+            suffix2 = "A"
         case .happyneutral:
-            goSuffix = "H"
-            noGoSuffix = "N"
-        case .neutralhappy:
-            goSuffix = "N"
-            noGoSuffix = "H"
+            suffix1 = "H"
+            suffix2 = "N"
+        case .happyangry:
+            suffix1 = "H"
+            suffix2 = "A"
         }
         
         var goList : [String] = []
@@ -114,26 +111,26 @@ class Block {
         
         //  Set nogo male names
         imageNums.shuffle()
-        for i in 1 ... numNoGoM {
-            noGoList.append(noGoSuffix + "M" + String(imageNums[i%6]))
+        for i in 1 ... numStopM {
+            noGoList.append(suffix2 + "M" + String(imageNums[i%6]))
         }
         
         //  set nogo female names
         imageNums.shuffle()
-        for i in 1 ... numNoGoF {
-            noGoList.append(noGoSuffix + "F" + String(imageNums[i%6]))
+        for i in 1 ... numStopF {
+            noGoList.append(suffix2 + "F" + String(imageNums[i%6]))
         }
         
         //  Set go male names
         imageNums.shuffle()
         for i in 1 ... numGoM {
-            goList.append(goSuffix + "M" + String(imageNums[i%6]))
+            goList.append(suffix1 + "M" + String(imageNums[i%6]))
         }
         
         //  set go female names
         imageNums.shuffle()
         for i in 1 ... numGoF {
-            goList.append(goSuffix + "F" + String(imageNums[i%6]))
+            goList.append(suffix1 + "F" + String(imageNums[i%6]))
         }
         
         goList.shuffle()
