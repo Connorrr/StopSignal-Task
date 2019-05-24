@@ -9,8 +9,7 @@
 //  Block Types
 enum BlockType {
     case practice
-    case angryneutral
-    case neutralangry
+    case happyangry
     case happyneutral
-    case neutralhappy
+    case neutralangry
 }
