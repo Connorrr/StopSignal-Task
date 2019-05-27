@@ -16,6 +16,7 @@ class Block {
     var trials : [TrialInfo]? = []
     var isGoTrial : [Bool] = []
     var trialImageFilenames : [String] = []
+    var stimulusType : [String] = []        // H, N, A
     
     
     
@@ -26,24 +27,23 @@ class Block {
         self.blockType = blockType
         
         if (blockType == .practice){
-            numberOfTrials = 10
+            numberOfTrials = 8
         }else{
             numberOfTrials = 48
         }
         
         buildStopGoList()
-        //buildMainBlockImageFilenames()
+        buildMainBlockImageFilenames()
     }
     
     private func buildStopGoList(){
         var typeBlock : [Int] = []
         var loops : Int
         
-        loops = numberOfTrials! / 10
+        loops = numberOfTrials! / 8
         for _ in 1 ... loops {
             typeBlock.append(1)
             typeBlock.append(2)
-            typeBlock.append(3)
         }
         
         typeBlock.shuffle()
@@ -51,12 +51,11 @@ class Block {
         for i in typeBlock {
             if (i == 1){
                 isGoTrial.append(true)
-                isGoTrial.append(false)
-            }else if(i == 2){
-                isGoTrial.append(true)
                 isGoTrial.append(true)
                 isGoTrial.append(false)
             }else{
+                isGoTrial.append(true)
+                isGoTrial.append(true)
                 isGoTrial.append(true)
                 isGoTrial.append(true)
                 isGoTrial.append(false)
@@ -91,9 +90,9 @@ class Block {
             suffix1 = "N"
             suffix2 = "H"
             numStopM = 1
-            numStopF = 2
+            numStopF = 1
             numGoM = 3
-            numGoF = 2
+            numGoF = 3
         case .neutralangry:
             suffix1 = "N"
             suffix2 = "A"
@@ -112,25 +111,41 @@ class Block {
         //  Set nogo male names
         imageNums.shuffle()
         for i in 1 ... numStopM {
-            noGoList.append(suffix2 + "M" + String(imageNums[i%6]))
+            if ( i <= numStopM/2){
+                noGoList.append(suffix2 + "M" + String(imageNums[i%6]))
+            }else{
+                noGoList.append(suffix1 + "M" + String(imageNums[i%6]))
+            }
         }
         
         //  set nogo female names
         imageNums.shuffle()
         for i in 1 ... numStopF {
-            noGoList.append(suffix2 + "F" + String(imageNums[i%6]))
+            if ( i <= numStopF/2){
+                noGoList.append(suffix2 + "F" + String(imageNums[i%6]))
+            }else{
+                noGoList.append(suffix1 + "F" + String(imageNums[i%6]))
+            }
         }
         
         //  Set go male names
         imageNums.shuffle()
         for i in 1 ... numGoM {
-            goList.append(suffix1 + "M" + String(imageNums[i%6]))
+            if ( i <= numGoM/2){
+                goList.append(suffix2 + "M" + String(imageNums[i%6]))
+            }else{
+                goList.append(suffix1 + "M" + String(imageNums[i%6]))
+            }
         }
         
         //  set go female names
         imageNums.shuffle()
         for i in 1 ... numGoF {
-            goList.append(suffix1 + "F" + String(imageNums[i%6]))
+            if ( i <= numGoF/2){
+                goList.append(suffix2 + "F" + String(imageNums[i%6]))
+            }else{
+                goList.append(suffix1 + "F" + String(imageNums[i%6]))
+            }
         }
         
         goList.shuffle()
@@ -139,10 +154,15 @@ class Block {
         for i in 0 ..< numberOfTrials! {
             if ( isGoTrial[i] ){
                 trialImageFilenames.append(goList.popLast()!)
+                
+                //print("\(trialImageFilenames[i])    \(isGoTrial[i])")
             }else{
                 trialImageFilenames.append(noGoList.popLast()!)
+                //print("\(trialImageFilenames[i])    \(isGoTrial[i])")
             }
+            stimulusType.append(String(trialImageFilenames[i].prefix(1)))
         }
+        
     }
     
 }

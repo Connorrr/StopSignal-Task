@@ -30,6 +30,8 @@ class BlockViewController: UIViewController {
     var blockData : [TrialData] = []
     var fileNames : [String]?
     var wasResponse = false
+    var leftButtonSuffix : String?
+    var rightButtonSuffix : String?
     
     var trialIndex : Int {
         return currentTrial-1
@@ -50,6 +52,21 @@ class BlockViewController: UIViewController {
         
         print("The block type is:  ")
         dump(blockType)
+        
+        switch blockType! {
+        case .practice:
+            leftButtonSuffix = "H"
+            rightButtonSuffix = "N"
+        case .happyangry:
+            leftButtonSuffix = "H"
+            rightButtonSuffix = "A"
+        case .happyneutral:
+            leftButtonSuffix = "H"
+            rightButtonSuffix = "N"
+        case .neutralangry:
+            leftButtonSuffix = "A"
+            rightButtonSuffix = "N"
+        }
         
         if StaticVars.id == "JasmineTest" {
             playEasterEgg()
@@ -75,31 +92,29 @@ class BlockViewController: UIViewController {
     }
     
     @IBAction func leftButtonPressed(_ sender: UIButton) {
-        trialData.response = "left"
-        if block!.trials![trialIndex].isEvenOdd! {
-            checkCorr()
-        } else {
-            checkCorr()
-        }
+        trialData.response = leftButtonSuffix!
+        wasResponse = true
+        checkCorr(selectedType: leftButtonSuffix!)
         forceProgress()
     }
     
     //  NOT USED
     @IBAction func fruitButtonPressed(_ sender: UIButton) {
         trialData.response = "fruit"
-        checkCorr()
+        //checkCorr()
         forceProgress()
     }
     
     //  NOT USED
     @IBAction func redButtonPressed(_ sender: UIButton) {
         trialData.response = "red"
-        checkCorr()
+        //checkCorr()
         forceProgress()
     }
     
     @IBAction func rightButtonPressed(_ sender: UIButton) {
-        trialData.response = "Go"
+        trialData.response = rightButtonSuffix!
+        checkCorr(selectedType: rightButtonSuffix!)
         wasResponse = true
         forceProgress()
     }
@@ -122,7 +137,7 @@ class BlockViewController: UIViewController {
     
     func executeBlock() {
         //print(block!.trialImageFilenames[trialIndex] + ".png")
-        self.stimImage.image = UIImage(named: "AF1")//block!.trialImageFilenames[trialIndex]) //  No images in this version
+        self.stimImage.image = UIImage(named: block!.trialImageFilenames[trialIndex]) //  No images in this version
         
         if StaticVars.id == "JasmineTest" {
             self.stimImage.image = #imageLiteral(resourceName: "jasmine.jpg")
@@ -152,7 +167,7 @@ class BlockViewController: UIViewController {
     
     func displayTrial() {
         if (!block!.isGoTrial[trialIndex]){
-            self.borderTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: { (responseTimer) in self.setBoarder(isSwitch: true) })
+            self.borderTimer = Timer.scheduledTimer(withTimeInterval: StaticVars.stopTime, repeats: false, block: { (responseTimer) in self.setBoarder(isSwitch: true) })
         }
         self.fixationCross.isHidden = true
         self.stimImage.isHidden = false
@@ -176,7 +191,9 @@ class BlockViewController: UIViewController {
     }
     
     func displayBlank() {
-        checkCorr()
+        if (!wasResponse){
+            checkCorr(selectedType: " ")
+        }
         getResponseTime()
         self.feedbackLabel.isHidden = true
         self.fixationCross.textColor = .black
@@ -238,18 +255,35 @@ class BlockViewController: UIViewController {
         trialData.rt = rT
     }
     
-    func checkCorr() {
-        if (block!.isGoTrial[trialIndex]){
-            if (wasResponse){
-                trialData.corr = 1
+    func checkCorr(selectedType: String) {  //TODO:  Check that this works
+        if(wasResponse){
+            if (block!.isGoTrial[trialIndex]){
+                if (selectedType == block!.stimulusType[trialIndex]){
+                    trialData.corr = 1
+                }else{
+                    trialData.corr = 0
+                }
             }else{
                 trialData.corr = 0
+                setStopDuration(isCorrect: false)
             }
         }else{
-            if (wasResponse){
+            if (block!.isGoTrial[trialIndex]){
                 trialData.corr = 0
             }else{
                 trialData.corr = 1
+                setStopDuration(isCorrect: true)
+            }
+        }
+    }
+    
+    //  Sets the new duration for the red banner on stop trials
+    func setStopDuration(isCorrect: Bool){
+        if (isCorrect){
+            StaticVars.stopTime += 0.05
+        }else{
+            if (StaticVars.stopTime >= 0){
+                StaticVars.stopTime -= 0.05
             }
         }
     }
