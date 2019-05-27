@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITextViewDelegate {
             case .neutralangry:
                 setText("NeutralAngry")
             case .happyangry:
-                setText("NeutralAngry")         // TODO:  Sort this shit out
+                setText("HappyAngry")         // TODO:  Sort this shit out
             case .practice:
                 break
             }
