@@ -17,7 +17,6 @@ class BlockViewController: UIViewController {
     @IBOutlet weak var fixationCross: UILabel!
     @IBOutlet weak var boarderView: UIView!
     
-    @IBOutlet weak var stimLabel: UILabel!
     @IBOutlet weak var leftButton: ResponseButton!
     @IBOutlet weak var fruitButton: ResponseButton!     //  This button is not used in the TS app
     @IBOutlet weak var redButton: ResponseButton!       //  This button is not used in the TS app
@@ -160,7 +159,6 @@ class BlockViewController: UIViewController {
     func displayFixation() {
         self.fixationCross.isHidden = false
         self.stimImage.isHidden = true
-        self.stimLabel.isHidden = true
         self.boarderView.isHidden = true
         self.setButtonVisibility(isHidden: true)
     }
@@ -171,7 +169,6 @@ class BlockViewController: UIViewController {
         }
         self.fixationCross.isHidden = true
         self.stimImage.isHidden = false
-        self.stimLabel.isHidden = true
         self.setButtonVisibility(isHidden: false)
         self.responseTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { (responseTimer) in self.displayBlank() }) //Set to 50000 so it is essentially waiting for a response only
         self.trialStartTime = Date()
@@ -181,7 +178,6 @@ class BlockViewController: UIViewController {
     func displayResponse () {
         self.fixationCross.isHidden = true
         self.stimImage.isHidden = true
-        self.stimLabel.isHidden = true
         self.boarderView.isHidden = true
         self.setButtonVisibility(isHidden: true)
         if self.trialData.corr != 1 {
@@ -200,7 +196,6 @@ class BlockViewController: UIViewController {
         self.fixationCross.text = "+"
         self.fixationCross.isHidden = true
         self.stimImage.isHidden = true
-        self.stimLabel.isHidden = true
         self.boarderView.isHidden = true
         let defaults = UserDefaults.standard
         let startTime = defaults.object(forKey: "startTime") as! Date
