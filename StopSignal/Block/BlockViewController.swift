@@ -261,6 +261,7 @@ class BlockViewController: UIViewController {
             }else{
                 trialData.corr = 0
                 setStopDuration(isCorrect: false)
+                print("IncorStopDuration:  \(StaticVars.stopTime)")
             }
         }else{
             if (block!.isGoTrial[trialIndex]){
@@ -268,6 +269,7 @@ class BlockViewController: UIViewController {
             }else{
                 trialData.corr = 1
                 setStopDuration(isCorrect: true)
+                print("CorStopDuration:  \(StaticVars.stopTime)")
             }
         }
     }
@@ -298,6 +300,7 @@ class BlockViewController: UIViewController {
         trialData = TrialData()
         trialData.trialNum = currentTrial
         trialData.blockNumber = blockProgress!
+        wasResponse = false
         
         switch blockType! {
         case .practice:
@@ -310,19 +313,6 @@ class BlockViewController: UIViewController {
             trialData.blockType = "HappyAngry"
         }
         
-        //  TODO:  Set the image for this trial
-        
-        //trialData.stim = block!.trials![trialIndex].stimLabel!
-//        switch block!.trials![trialIndex].condition! {
-//        case .vowel:
-//            trialData.trialCondition = "vowel"
-//        case .consonant:
-//            trialData.trialCondition = "consonant"
-//        case .even:
-//            trialData.trialCondition = "even"
-//        case .odd:
-//            trialData.trialCondition = "odd"
-//        }
     }
     
     func playEasterEgg () {
