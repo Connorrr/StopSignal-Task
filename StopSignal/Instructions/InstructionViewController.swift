@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController, UITextViewDelegate {
     
-    var experimentStructure : [BlockType] = [.practice,.happyangry, .happyneutral, .neutralangry, .happyangry, .happyneutral, .neutralangry]
+    var experimentStructure : [BlockType] = [.practice,.happyangry, .happyneutral, .neutralangry]
     let isEvenOddStructure : [Bool?] = [nil, true, false, nil]                  //  This is used to define the single blocks types and whether they are Task A (even,odd) or B (vowel,consonant)
     let numBlocks = 4
     
