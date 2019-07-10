@@ -42,8 +42,13 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         switch instructionsState! {
         case .openingText:
-            setText("Opening")
-            setTestTimer(isFinished: false)
+            if (StaticVars.isAbstract){
+                setText("OpeningAbstract")
+                setTestTimer(isFinished: false)
+            }else{
+                setText("Opening")
+                setTestTimer(isFinished: false)
+            }
         case .breakText:
             setText("Break")
             switch experimentStructure[blockProgress] {
@@ -53,6 +58,8 @@ class ViewController: UIViewController, UITextViewDelegate {
                 setText("NeutralAngry")
             case .happyangry:
                 setText("HappyAngry")         // TODO:  Sort this shit out
+            case .abstract:
+                setText("AbstractInstructions")
             case .practice:
                 break
             }
