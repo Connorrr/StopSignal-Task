@@ -36,6 +36,9 @@
 		BF10700021BF41ED00DC6207 /* jasmine.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF106FFE21BF41ED00DC6207 /* jasmine.jpg */; };
 		BF10700121BF41ED00DC6207 /* AWholeNewWorld.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BF106FFF21BF41ED00DC6207 /* AWholeNewWorld.mp3 */; };
 		BF10700421BF791F00DC6207 /* LetterNumberStim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10700321BF791F00DC6207 /* LetterNumberStim.swift */; };
+		BF4B53D222D572070005EAB4 /* neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53CF22D572060005EAB4 /* neutral.png */; };
+		BF4B53D322D572070005EAB4 /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53D022D572060005EAB4 /* angry.png */; };
+		BF4B53D422D572070005EAB4 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53D122D572070005EAB4 /* happy.png */; };
 		BF4FE51321C9EA1600C758EF /* LeftButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4FE51121C9EA1500C758EF /* LeftButton.png */; };
 		BF4FE51421C9EA1600C758EF /* RightButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4FE51221C9EA1600C758EF /* RightButton.png */; };
 		BF4FE51921CA011700C758EF /* ConsonantButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4FE51521CA011600C758EF /* ConsonantButton.png */; };
@@ -146,6 +149,9 @@
 		BF106FFE21BF41ED00DC6207 /* jasmine.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = jasmine.jpg; path = StopSignal/EasterEgg/jasmine.jpg; sourceTree = SOURCE_ROOT; };
 		BF106FFF21BF41ED00DC6207 /* AWholeNewWorld.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AWholeNewWorld.mp3; path = ../../GoNoGo/GoNoGo/EasterEgg/AWholeNewWorld.mp3; sourceTree = SOURCE_ROOT; };
 		BF10700321BF791F00DC6207 /* LetterNumberStim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterNumberStim.swift; sourceTree = "<group>"; };
+		BF4B53CF22D572060005EAB4 /* neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neutral.png; path = Buttons/neutral.png; sourceTree = SOURCE_ROOT; };
+		BF4B53D022D572060005EAB4 /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angry.png; path = Buttons/angry.png; sourceTree = SOURCE_ROOT; };
+		BF4B53D122D572070005EAB4 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy.png; path = Buttons/happy.png; sourceTree = SOURCE_ROOT; };
 		BF4FE51121C9EA1500C758EF /* LeftButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeftButton.png; path = Buttons/LeftButton.png; sourceTree = SOURCE_ROOT; };
 		BF4FE51221C9EA1600C758EF /* RightButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightButton.png; path = Buttons/RightButton.png; sourceTree = SOURCE_ROOT; };
 		BF4FE51521CA011600C758EF /* ConsonantButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConsonantButton.png; path = Buttons/ConsonantButton.png; sourceTree = SOURCE_ROOT; };
@@ -427,6 +433,9 @@
 		BF71321F205B8BE9003D89D1 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				BF4B53D022D572060005EAB4 /* angry.png */,
+				BF4B53D122D572070005EAB4 /* happy.png */,
+				BF4B53CF22D572060005EAB4 /* neutral.png */,
 				BF4FE51521CA011600C758EF /* ConsonantButton.png */,
 				BF870220229522B0008413B2 /* GoButton.png */,
 				BF4FE51621CA011600C758EF /* EvenButton.png */,
@@ -662,6 +671,7 @@
 				BF106FF621BF417900DC6207 /* rv4.jpg in Resources */,
 				BF5434402293C4120057E28A /* HM3.png in Resources */,
 				BF4FE51A21CA011700C758EF /* EvenButton.png in Resources */,
+				BF4B53D222D572070005EAB4 /* neutral.png in Resources */,
 				BF54342A2293C4120057E28A /* NF2.png in Resources */,
 				BF5434422293C4120057E28A /* NM3.png in Resources */,
 				BF884E04205A2044002262DB /* Assets.xcassets in Resources */,
@@ -681,6 +691,7 @@
 				BF106FEE21BF417900DC6207 /* gv2.jpg in Resources */,
 				BF54342B2293C4120057E28A /* AM2.png in Resources */,
 				BF5434352293C4120057E28A /* AM1.png in Resources */,
+				BF4B53D422D572070005EAB4 /* happy.png in Resources */,
 				BF5434412293C4120057E28A /* NF6.png in Resources */,
 				BF54342E2293C4120057E28A /* NM4.png in Resources */,
 				BF106FF421BF417900DC6207 /* rf1.jpg in Resources */,
@@ -690,6 +701,7 @@
 				BF91B91C20689E1F00C86DED /* Opening.html in Resources */,
 				BF87022922952D35008413B2 /* NeutralAngry.html in Resources */,
 				BF106FE621BF417900DC6207 /* 7.png in Resources */,
+				BF4B53D322D572070005EAB4 /* angry.png in Resources */,
 				BF87022622952D35008413B2 /* HappyAngry.html in Resources */,
 				BF870221229522B0008413B2 /* GoButton.png in Resources */,
 			);

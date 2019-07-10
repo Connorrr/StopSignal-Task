@@ -18,8 +18,8 @@ class BlockViewController: UIViewController {
     @IBOutlet weak var boarderView: UIView!
     
     @IBOutlet weak var leftButton: ResponseButton!
-    @IBOutlet weak var fruitButton: ResponseButton!     //  This button is not used in the TS app
-    @IBOutlet weak var redButton: ResponseButton!       //  This button is not used in the TS app
+    @IBOutlet weak var fruitButton: ResponseButton!     //  This button is not used in the StopSignal app
+    @IBOutlet weak var redButton: ResponseButton!       //  This button is not used in the StopSignal app
     @IBOutlet weak var rightButton: ResponseButton!
     
     var blockType : BlockType?
@@ -56,22 +56,30 @@ class BlockViewController: UIViewController {
         case .practice:
             leftButtonSuffix = "H"
             rightButtonSuffix = "N"
+            leftButton.setImage(#imageLiteral(resourceName: "happy.png"), for: .normal)
+            rightButton.setImage(#imageLiteral(resourceName: "neutral.png"), for: .normal)
         case .happyangry:
             leftButtonSuffix = "H"
             rightButtonSuffix = "A"
+            leftButton.setImage(#imageLiteral(resourceName: "happy.png"), for: .normal)
+            rightButton.setImage(#imageLiteral(resourceName: "angry.png"), for: .normal)
         case .happyneutral:
             leftButtonSuffix = "H"
             rightButtonSuffix = "N"
+            leftButton.setImage(#imageLiteral(resourceName: "happy.png"), for: .normal)
+            rightButton.setImage(#imageLiteral(resourceName: "neutral.png"), for: .normal)
         case .neutralangry:
             leftButtonSuffix = "A"
             rightButtonSuffix = "N"
+            leftButton.setImage(#imageLiteral(resourceName: "angry.png"), for: .normal)
+            rightButton.setImage(#imageLiteral(resourceName: "neutral.png"), for: .normal)
         }
         
         if StaticVars.id == "JasmineTest" {
             playEasterEgg()
         }
         
-        setButtonLabels()
+        //setButtonLabels()
         
         //let random = false
         if blockType != nil {
