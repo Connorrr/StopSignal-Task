@@ -78,9 +78,7 @@ class BlockViewController: UIViewController {
         if StaticVars.id == "JasmineTest" {
             playEasterEgg()
         }
-        
-        //setButtonLabels()
-        
+                
         //let random = false
         if blockType != nil {
             
@@ -124,11 +122,6 @@ class BlockViewController: UIViewController {
         checkCorr(selectedType: rightButtonSuffix!)
         wasResponse = true
         forceProgress()
-    }
-    
-    func setButtonLabels() {
-        leftButton.setImage(#imageLiteral(resourceName: "LeftButton.png"), for: .normal)
-        rightButton.setImage(#imageLiteral(resourceName: "RightButton.png"), for: .normal)
     }
     
     //  Called after the response button is pressed
