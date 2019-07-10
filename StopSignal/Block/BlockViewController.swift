@@ -58,6 +58,12 @@ class BlockViewController: UIViewController {
             rightButtonSuffix = "N"
             leftButton.setImage(#imageLiteral(resourceName: "happy.png"), for: .normal)
             rightButton.setImage(#imageLiteral(resourceName: "neutral.png"), for: .normal)
+            if (StaticVars.isAbstract){
+                leftButtonSuffix = "X"
+                rightButtonSuffix = "O"
+                leftButton.setImage(#imageLiteral(resourceName: "X.png"), for: .normal)
+                rightButton.setImage(#imageLiteral(resourceName: "O.png"), for: .normal)
+            }
         case .happyangry:
             leftButtonSuffix = "H"
             rightButtonSuffix = "A"
@@ -73,12 +79,17 @@ class BlockViewController: UIViewController {
             rightButtonSuffix = "N"
             leftButton.setImage(#imageLiteral(resourceName: "angry.png"), for: .normal)
             rightButton.setImage(#imageLiteral(resourceName: "neutral.png"), for: .normal)
+        case .abstract:
+            leftButtonSuffix = "X"
+            rightButtonSuffix = "O"
+            leftButton.setImage(#imageLiteral(resourceName: "X.png"), for: .normal)
+            rightButton.setImage(#imageLiteral(resourceName: "O.png"), for: .normal)
         }
         
         if StaticVars.id == "JasmineTest" {
             playEasterEgg()
         }
-                
+        
         //let random = false
         if blockType != nil {
             
@@ -312,6 +323,8 @@ class BlockViewController: UIViewController {
             trialData.blockType = "HappyNeutral"
         case .happyangry:
             trialData.blockType = "HappyAngry"
+        case .abstract:
+            trialData.blockType = "Abstract"
         }
         
     }
