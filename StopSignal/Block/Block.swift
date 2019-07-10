@@ -89,6 +89,10 @@ class Block {
         case .practice:
             suffix1 = "N"
             suffix2 = "H"
+            if (StaticVars.isAbstract){
+                suffix1 = "X"
+                suffix2 = "O"
+            }
             numStopM = 1
             numStopF = 1
             numGoM = 3
@@ -102,6 +106,9 @@ class Block {
         case .happyangry:
             suffix1 = "H"
             suffix2 = "A"
+        case .abstract:
+            suffix1 = "X"
+            suffix2 = "O"
         }
         
         var goList : [String] = []
@@ -110,11 +117,20 @@ class Block {
         
         //  Set nogo male names
         imageNums.shuffle()
+        var fName = ""
         for i in 1 ... numStopM {
             if ( i <= numStopM/2){
-                noGoList.append(suffix2 + "M" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    noGoList.append(suffix2)
+                }else{
+                    noGoList.append(suffix2 + "M" + String(imageNums[i%6]))
+                }
             }else{
-                noGoList.append(suffix1 + "M" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    noGoList.append(suffix1)
+                }else{
+                    noGoList.append(suffix1 + "M" + String(imageNums[i%6]))
+                }
             }
         }
         
@@ -122,9 +138,17 @@ class Block {
         imageNums.shuffle()
         for i in 1 ... numStopF {
             if ( i <= numStopF/2){
-                noGoList.append(suffix2 + "F" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    noGoList.append(suffix2)
+                }else{
+                    noGoList.append(suffix2 + "F" + String(imageNums[i%6]))
+                }
             }else{
-                noGoList.append(suffix1 + "F" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    noGoList.append(suffix1)
+                }else{
+                    noGoList.append(suffix1 + "F" + String(imageNums[i%6]))
+                }
             }
         }
         
@@ -132,9 +156,17 @@ class Block {
         imageNums.shuffle()
         for i in 1 ... numGoM {
             if ( i <= numGoM/2){
-                goList.append(suffix2 + "M" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    goList.append(suffix2)
+                }else{
+                    goList.append(suffix2 + "M" + String(imageNums[i%6]))
+                }
             }else{
-                goList.append(suffix1 + "M" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    goList.append(suffix1)
+                }else{
+                    goList.append(suffix1 + "M" + String(imageNums[i%6]))
+                }
             }
         }
         
@@ -142,9 +174,17 @@ class Block {
         imageNums.shuffle()
         for i in 1 ... numGoF {
             if ( i <= numGoF/2){
-                goList.append(suffix2 + "F" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    goList.append(suffix2)
+                }else{
+                    goList.append(suffix2 + "F" + String(imageNums[i%6]))
+                }
             }else{
-                goList.append(suffix1 + "F" + String(imageNums[i%6]))
+                if (StaticVars.isAbstract){
+                    goList.append(suffix1)
+                }else{
+                    goList.append(suffix1 + "F" + String(imageNums[i%6]))
+                }
             }
         }
         

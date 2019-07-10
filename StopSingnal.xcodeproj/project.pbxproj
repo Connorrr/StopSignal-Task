@@ -40,6 +40,8 @@
 		BF4B53D322D572070005EAB4 /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53D022D572060005EAB4 /* angry.png */; };
 		BF4B53D422D572070005EAB4 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53D122D572070005EAB4 /* happy.png */; };
 		BF4B53EB22D5AF1E0005EAB4 /* AbstractInstructions.html in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53EA22D5AF1E0005EAB4 /* AbstractInstructions.html */; };
+		BF4B53EE22D5B17C0005EAB4 /* O.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53EC22D5B17B0005EAB4 /* O.png */; };
+		BF4B53EF22D5B17C0005EAB4 /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4B53ED22D5B17B0005EAB4 /* X.png */; };
 		BF4FE51321C9EA1600C758EF /* LeftButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4FE51121C9EA1500C758EF /* LeftButton.png */; };
 		BF4FE51421C9EA1600C758EF /* RightButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4FE51221C9EA1600C758EF /* RightButton.png */; };
 		BF4FE51921CA011700C758EF /* ConsonantButton.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4FE51521CA011600C758EF /* ConsonantButton.png */; };
@@ -154,6 +156,8 @@
 		BF4B53D022D572060005EAB4 /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angry.png; path = Buttons/angry.png; sourceTree = SOURCE_ROOT; };
 		BF4B53D122D572070005EAB4 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = happy.png; path = Buttons/happy.png; sourceTree = SOURCE_ROOT; };
 		BF4B53EA22D5AF1E0005EAB4 /* AbstractInstructions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AbstractInstructions.html; sourceTree = "<group>"; };
+		BF4B53EC22D5B17B0005EAB4 /* O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O.png; sourceTree = "<group>"; };
+		BF4B53ED22D5B17B0005EAB4 /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X.png; sourceTree = "<group>"; };
 		BF4FE51121C9EA1500C758EF /* LeftButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LeftButton.png; path = Buttons/LeftButton.png; sourceTree = SOURCE_ROOT; };
 		BF4FE51221C9EA1600C758EF /* RightButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RightButton.png; path = Buttons/RightButton.png; sourceTree = SOURCE_ROOT; };
 		BF4FE51521CA011600C758EF /* ConsonantButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ConsonantButton.png; path = Buttons/ConsonantButton.png; sourceTree = SOURCE_ROOT; };
@@ -409,6 +413,8 @@
 		BF71321D205B7A0D003D89D1 /* Stimulus */ = {
 			isa = PBXGroup;
 			children = (
+				BF4B53EC22D5B17B0005EAB4 /* O.png */,
+				BF4B53ED22D5B17B0005EAB4 /* X.png */,
 				BF5433FE2293C3B60057E28A /* Faces */,
 				BF10700221BF789500DC6207 /* LetterNumberStim */,
 				BF106FCA21BF417800DC6207 /* 1.png */,
@@ -658,6 +664,7 @@
 				BF5434312293C4120057E28A /* HM4.png in Resources */,
 				BF4FE51921CA011700C758EF /* ConsonantButton.png in Resources */,
 				BF106FF121BF417900DC6207 /* gv4.jpg in Resources */,
+				BF4B53EF22D5B17C0005EAB4 /* X.png in Resources */,
 				BF5434452293C4120057E28A /* HM5.png in Resources */,
 				BF4FE51B21CA011700C758EF /* OddButton.png in Resources */,
 				BF54343C2293C4120057E28A /* NM2.png in Resources */,
@@ -707,6 +714,7 @@
 				BF106FE621BF417900DC6207 /* 7.png in Resources */,
 				BF4B53D322D572070005EAB4 /* angry.png in Resources */,
 				BF87022622952D35008413B2 /* HappyAngry.html in Resources */,
+				BF4B53EE22D5B17C0005EAB4 /* O.png in Resources */,
 				BF870221229522B0008413B2 /* GoButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

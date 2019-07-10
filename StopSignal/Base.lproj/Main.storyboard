@@ -54,11 +54,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="awM-cD-fo7">
+                                <rect key="frame" x="925" y="70" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Zh3-kQ-768" firstAttribute="trailing" secondItem="awM-cD-fo7" secondAttribute="trailing" constant="50" id="7qH-TB-ipG"/>
                             <constraint firstItem="tKK-AE-umW" firstAttribute="height" secondItem="3rb-4E-hqa" secondAttribute="height" id="8aZ-j4-4vN"/>
                             <constraint firstItem="3rb-4E-hqa" firstAttribute="top" secondItem="zjG-bv-Umc" secondAttribute="bottom" constant="78" id="EPo-vc-2G0"/>
+                            <constraint firstItem="awM-cD-fo7" firstAttribute="top" secondItem="Zh3-kQ-768" secondAttribute="top" constant="50" id="IDO-9e-GUY"/>
                             <constraint firstItem="tKK-AE-umW" firstAttribute="centerX" secondItem="3rb-4E-hqa" secondAttribute="centerX" id="JEC-xb-Kxz"/>
                             <constraint firstItem="yU5-BK-IdP" firstAttribute="top" secondItem="3rb-4E-hqa" secondAttribute="bottom" constant="71" id="JfE-a2-hpM"/>
                             <constraint firstItem="yU5-BK-IdP" firstAttribute="centerX" secondItem="Zh3-kQ-768" secondAttribute="centerX" id="LjD-sX-fZG"/>
@@ -72,6 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="Zh3-kQ-768"/>
                     </view>
                     <connections>
+                        <outlet property="abstractSwitch" destination="awM-cD-fo7" id="JLs-uv-VRN"/>
                         <outlet property="groupNumberTextField" destination="tKK-AE-umW" id="zmJ-xq-XHv"/>
                         <outlet property="idField" destination="3rb-4E-hqa" id="LmX-pW-WYd"/>
                         <outlet property="startButton" destination="yU5-BK-IdP" id="or9-LE-hSO"/>
@@ -254,7 +260,6 @@
         <image name="VowelButton.png" width="209" height="209"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VeX-7z-6Li"/>
-        <segue reference="Bbe-oS-AWF"/>
+        <segue reference="oVc-5C-Hki"/>
     </inferredMetricsTieBreakers>
 </document>
