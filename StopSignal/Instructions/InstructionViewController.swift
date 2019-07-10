@@ -105,13 +105,9 @@ class ViewController: UIViewController, UITextViewDelegate {
         experimentStructure = [.practice, structure[0], structure[1], structure[2], structure[3]]
     }
     
-    var readyToBeginPractice = false
     @objc func viewTapped() {
         if instructionsState! == .goodbyeText {
             performSegue(withIdentifier: "instructionsToLogin", sender: nil)
-        } else if instructionsState! == .openingText && !readyToBeginPractice {
-            setText("Opening2")
-            readyToBeginPractice = true
         } else {
             performSegue(withIdentifier: "presentBlock", sender: nil)
         }
@@ -142,7 +138,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         var d : NSDictionary? = nil
         let s = try! NSAttributedString(url: url!, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: &d)
         self.instructionsTextView.attributedText = s
-        self.instructionsTextView.font = UIFont(name: "Helvetica", size: 24)
+        //self.instructionsTextView.font = UIFont(name: "Helvetica", size: 24)
         return true
     }
 

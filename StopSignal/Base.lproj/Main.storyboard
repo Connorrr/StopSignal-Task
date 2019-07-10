@@ -254,6 +254,7 @@
         <image name="VowelButton.png" width="209" height="209"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="VeX-7z-6Li"/>
         <segue reference="Bbe-oS-AWF"/>
     </inferredMetricsTieBreakers>
 </document>
