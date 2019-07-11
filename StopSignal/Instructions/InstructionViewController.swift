@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         logFileMaker = LogFileMaker(fileName: "\(StaticVars.id)-\(getDateString())")
         
-        //setExperimentStructure()  TODO:  Add this in when the group selection works
+        setExperimentStructure() 
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped))
         instructionsTextView.addGestureRecognizer(tapRecognizer)
@@ -107,9 +107,23 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     func setExperimentStructure(){
-        var structure : [BlockType] = [.happyneutral, .neutralangry]
-        structure.shuffle()
-        experimentStructure = [.practice, structure[0], structure[1], structure[2], structure[3]]
+        var structure : [BlockType]
+        var order : [Int] = [5, 5, 5]
+        if (StaticVars.isAbstract){
+            structure = [.abstract, .abstract, .abstract]
+        }else{
+            structure = [.happyangry, .happyneutral, .neutralangry]
+        }
+        if (StaticVars.group == 1){
+            order = [0, 1, 2]
+        }else if (StaticVars.group == 2){
+            order = [1, 2, 0]
+        }else if(StaticVars.group == 3){
+            order = [2, 0, 1]
+        }else{
+            print("Error: InstructionsViewcontroller: setExperimentStructure: group number should be between 1 - 3")
+        }
+        experimentStructure = [.practice, structure[order[0]], structure[order[1]], structure[order[2]]]
     }
     
     @objc func viewTapped() {
