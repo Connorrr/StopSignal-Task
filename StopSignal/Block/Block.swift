@@ -97,9 +97,9 @@ class Block {
             numStopF = 1
             numGoM = 3
             numGoF = 3
-        case .neutralangry:
-            suffix1 = "N"
-            suffix2 = "A"
+        case .angryneutral:
+            suffix1 = "A"
+            suffix2 = "N"
         case .happyneutral:
             suffix1 = "H"
             suffix2 = "N"
@@ -117,7 +117,6 @@ class Block {
         
         //  Set nogo male names
         imageNums.shuffle()
-        var fName = ""
         for i in 1 ... numStopM {
             if ( i <= numStopM/2){
                 if (StaticVars.isAbstract){

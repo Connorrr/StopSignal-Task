@@ -11,8 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController, UITextViewDelegate {
     
-    var experimentStructure : [BlockType] = [.practice,.happyangry, .happyneutral, .neutralangry]
-    let isEvenOddStructure : [Bool?] = [nil, true, false, nil]                  //  This is used to define the single blocks types and whether they are Task A (even,odd) or B (vowel,consonant)
+    var experimentStructure : [BlockType] = [.practice,.happyangry, .happyneutral, .angryneutral]
     let numBlocks = 4
     
     var blockProgress : Int = 0
@@ -31,7 +30,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         logFileMaker = LogFileMaker(fileName: "\(StaticVars.id)-\(getDateString())")
         
-        setExperimentStructure() 
+        setExperimentStructure()
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped))
         instructionsTextView.addGestureRecognizer(tapRecognizer)
@@ -54,10 +53,10 @@ class ViewController: UIViewController, UITextViewDelegate {
             switch experimentStructure[blockProgress] {
             case .happyneutral:
                 setText("HappyNeutral")
-            case .neutralangry:
-                setText("NeutralAngry")
+            case .angryneutral:
+                setText("AngryNeutral")
             case .happyangry:
-                setText("HappyAngry")         // TODO:  Sort this shit out
+                setText("HappyAngry")         
             case .abstract:
                 setText("AbstractInstructions")
             case .practice:
@@ -112,7 +111,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         if (StaticVars.isAbstract){
             structure = [.abstract, .abstract, .abstract]
         }else{
-            structure = [.happyangry, .happyneutral, .neutralangry]
+            structure = [.happyangry, .happyneutral, .angryneutral]
         }
         if (StaticVars.group == 1){
             order = [0, 1, 2]
@@ -138,7 +137,6 @@ class ViewController: UIViewController, UITextViewDelegate {
         if segue.identifier == "presentBlock" {
             if let blockViewController = segue.destination as? BlockViewController {
                 blockViewController.blockType = experimentStructure[blockProgress]
-                blockViewController.isEvenOdd = isEvenOddStructure[blockProgress]
                 blockViewController.blockProgress = blockProgress
             }
         }

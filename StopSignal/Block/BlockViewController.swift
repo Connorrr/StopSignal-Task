@@ -23,7 +23,6 @@ class BlockViewController: UIViewController {
     @IBOutlet weak var rightButton: ResponseButton!
     
     var blockType : BlockType?
-    var isEvenOdd : Bool?
     var block : Block?
     var blockProgress : Int?
     var blockData : [TrialData] = []
@@ -74,7 +73,7 @@ class BlockViewController: UIViewController {
             rightButtonSuffix = "N"
             leftButton.setImage(#imageLiteral(resourceName: "happy.png"), for: .normal)
             rightButton.setImage(#imageLiteral(resourceName: "neutral.png"), for: .normal)
-        case .neutralangry:
+        case .angryneutral:
             leftButtonSuffix = "A"
             rightButtonSuffix = "N"
             leftButton.setImage(#imageLiteral(resourceName: "angry.png"), for: .normal)
@@ -317,7 +316,7 @@ class BlockViewController: UIViewController {
         switch blockType! {
         case .practice:
             trialData.blockType = "Practice"
-        case .neutralangry:
+        case .angryneutral:
             trialData.blockType = "NeutralAngry"
         case .happyneutral:
             trialData.blockType = "HappyNeutral"

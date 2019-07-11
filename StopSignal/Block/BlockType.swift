@@ -11,6 +11,6 @@ enum BlockType {
     case practice
     case happyangry
     case happyneutral
-    case neutralangry
+    case angryneutral
     case abstract
 }
