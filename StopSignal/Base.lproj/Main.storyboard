@@ -137,9 +137,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEx-hh-i0n" userLabel="Boarder View">
-                                <rect key="frame" x="234" y="38.5" width="556" height="511"/>
+                                <rect key="frame" x="259" y="34" width="506" height="520"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AF2" translatesAutoresizingMaskIntoConstraints="NO" id="ot3-dr-gSu" userLabel="StimImage">
+                                <rect key="frame" x="258.99999999999994" y="84" width="506.00000000000017" height="420"/>
+                            </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUf-oY-C62" userLabel="FixationCross">
                                 <rect key="frame" x="212" y="227" width="600" height="134"/>
                                 <constraints>
@@ -159,14 +162,11 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AF2" translatesAutoresizingMaskIntoConstraints="NO" id="ot3-dr-gSu" userLabel="StimImage">
-                                <rect key="frame" x="258.99999999999994" y="63.5" width="506.00000000000017" height="461"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-l8-ad5" userLabel="ButtonStackView">
-                                <rect key="frame" x="50" y="588.5" width="924" height="129.5"/>
+                                <rect key="frame" x="50" y="568" width="924" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISt-hX-lUc" userLabel="LeftButton" customClass="ResponseButton" customModule="StopSingnal" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="216" height="129.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="150"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <state key="normal" title="Vowel" image="VowelButton.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,7 +176,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR1-JN-C05" userLabel="FruitButton" customClass="ResponseButton" customModule="StopSingnal" customModuleProvider="target">
-                                        <rect key="frame" x="236" y="0.0" width="216" height="129.5"/>
+                                        <rect key="frame" x="236" y="0.0" width="216" height="150"/>
                                         <state key="normal" title="Less Than" image="FruitButton.png">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -185,7 +185,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ0-d3-tlA" userLabel="RedButton" customClass="ResponseButton" customModule="StopSingnal" customModuleProvider="target">
-                                        <rect key="frame" x="472" y="0.0" width="216" height="129.5"/>
+                                        <rect key="frame" x="472" y="0.0" width="216" height="150"/>
                                         <state key="normal" title="Even" image="RedButton.png">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -194,7 +194,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTH-RD-j9R" userLabel="RightButton" customClass="ResponseButton" customModule="StopSingnal" customModuleProvider="target">
-                                        <rect key="frame" x="708" y="0.0" width="216" height="129.5"/>
+                                        <rect key="frame" x="708" y="0.0" width="216" height="150"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <state key="normal" title="Consonant" image="ConsonantButton.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,15 +220,15 @@
                             <constraint firstItem="ot3-dr-gSu" firstAttribute="centerY" secondItem="Jc3-94-6bU" secondAttribute="centerY" constant="-100" id="7oV-aW-u0P"/>
                             <constraint firstItem="oxx-Ow-HGg" firstAttribute="leading" secondItem="Jc3-94-6bU" secondAttribute="leading" constant="50" id="9Zm-kh-3Dt"/>
                             <constraint firstItem="Jc3-94-6bU" firstAttribute="trailing" secondItem="oxx-Ow-HGg" secondAttribute="trailing" constant="50" id="IEu-7Z-HqA"/>
-                            <constraint firstItem="ot3-dr-gSu" firstAttribute="height" secondItem="9Kp-dG-Cfx" secondAttribute="height" multiplier="0.6" id="SLQ-X7-koK"/>
-                            <constraint firstItem="NEx-hh-i0n" firstAttribute="height" secondItem="ot3-dr-gSu" secondAttribute="height" constant="50" id="Wu1-Og-G8U"/>
+                            <constraint firstItem="NEx-hh-i0n" firstAttribute="width" secondItem="ot3-dr-gSu" secondAttribute="width" id="Iyr-Vz-Jop"/>
                             <constraint firstItem="m4I-l8-ad5" firstAttribute="top" secondItem="ot3-dr-gSu" secondAttribute="bottom" constant="64" id="dAb-30-M9X"/>
                             <constraint firstItem="NEx-hh-i0n" firstAttribute="centerX" secondItem="Jc3-94-6bU" secondAttribute="centerX" id="dJK-cB-NpG"/>
                             <constraint firstItem="ot3-dr-gSu" firstAttribute="centerX" secondItem="Jc3-94-6bU" secondAttribute="centerX" id="fCE-FU-zzp"/>
+                            <constraint firstItem="ot3-dr-gSu" firstAttribute="top" secondItem="Jc3-94-6bU" secondAttribute="top" constant="64" id="hhY-V8-djc"/>
                             <constraint firstItem="Jc3-94-6bU" firstAttribute="bottom" secondItem="m4I-l8-ad5" secondAttribute="bottom" constant="50" id="mZ3-6Q-j8d"/>
                             <constraint firstItem="NEx-hh-i0n" firstAttribute="centerY" secondItem="Jc3-94-6bU" secondAttribute="centerY" constant="-100" id="puy-XR-iUF"/>
+                            <constraint firstItem="NEx-hh-i0n" firstAttribute="height" secondItem="ot3-dr-gSu" secondAttribute="height" constant="100" id="qnh-3d-A8c"/>
                             <constraint firstItem="oxx-Ow-HGg" firstAttribute="top" secondItem="Jc3-94-6bU" secondAttribute="top" constant="40" id="r0P-Ss-xyn"/>
-                            <constraint firstItem="NEx-hh-i0n" firstAttribute="width" secondItem="ot3-dr-gSu" secondAttribute="width" constant="50" id="uGc-zI-tP4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jc3-94-6bU"/>
                     </view>
@@ -257,6 +257,6 @@
         <image name="VowelButton.png" width="209" height="209"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bbe-oS-AWF"/>
+        <segue reference="oVc-5C-Hki"/>
     </inferredMetricsTieBreakers>
 </document>
